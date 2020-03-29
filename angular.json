@@ -128,5 +128,10 @@
   "defaultProject": "AngularSeccion3",
   "cli": {
     "analytics": "b88dec6f-f5ce-4327-a0ac-acc48aa3ba37"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "spec": false
+    }
   }
 }
