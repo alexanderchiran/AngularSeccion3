@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -7,17 +8,19 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
   recipes: Recipe[] = [
-    new Recipe('Prueba de receta', 'descripcion de receta',
-      'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/spaghetti-puttanesca_1.jpg')
-    , new Recipe('Prueba de receta 2', 'descripcion de receta 2',
-      'https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/spaghetti-puttanesca_1.jpg')
-
+    new Recipe('Receta 1', 'This is simply a test', 'https://s1.eestatic.com/2020/02/17/actualidad/Actualidad_468214105_145697488_854x640.jpg'),
+    new Recipe('Reta 2', 'This is simply a test', 'https://ep01.epimg.net/elcomidista/imagenes/2019/07/22/articulo/1563801848_984792_1563804092_noticia_normal.jpg')
   ];
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  onRecipeSelected(recipe: Recipe) {
+   this.recipeWasSelected.emit(recipe);
   }
 
 }

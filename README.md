@@ -29,3 +29,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## FormsModule
+
+One quick note: In case you're hitting an error in the next lecture, make sure you have FormsModule added to your imports[] in the AppModule
