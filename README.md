@@ -1,6 +1,8 @@
+# Descargar Dependencias 
+path_project>npm install
+
 # Comandos varios 
  ng g c recipes --spec false 
-
 
 # AngularSeccion3
 
