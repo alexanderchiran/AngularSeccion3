@@ -35,3 +35,28 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## FormsModule
 
 One quick note: In case you're hitting an error in the next lecture, make sure you have FormsModule added to your imports[] in the AppModule
+
+##Provider 
+
+@Component({
+  selector: 'app-recipes',
+  templateUrl: './recipes.component.html',
+  styleUrls: ['./recipes.component.css'],
+  //provider inject a services
+  providers: [RecipeService]
+})
+export class RecipesComponent implements OnInit {
+  selectedRecipe: Recipe;
+
+  constructor(private recipeService: RecipeService) { }
+
+  ngOnInit() {
+    this.recipeService.recipeSelected
+      .subscribe(
+        (recipe: Recipe) => {
+          this.selectedRecipe = recipe;
+        }
+      );
+  }
+
+}
