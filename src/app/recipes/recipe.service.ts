@@ -23,6 +23,14 @@ export class RecipeService {
                 new Ingredient('Buns', 2),
                 new Ingredient('Meat', 1)
             ])
+            ,
+        new Recipe('Pizza',
+            'What else you need to say?',
+            'https://placeralplato.com/files/2016/05/Pizza-crocante-640x480.jpg',
+            [
+                new Ingredient('Buns', 2),
+                new Ingredient('Meat', 1)
+            ])
     ];
 
     constructor(private slService: ShoppingListService) { }
@@ -34,5 +42,14 @@ export class RecipeService {
 
     addIngredientsToShoppingList(ingredients: Ingredient[]) {
         this.slService.addIngredients(ingredients);
+    }
+
+    /**
+     * retorna un elemento de la lista en base a un index
+     * @param index 
+     */
+    getRecipe(index: number ){
+        //return this.recipes.slice()[index];
+        return this.recipes[index];
     }
 }
