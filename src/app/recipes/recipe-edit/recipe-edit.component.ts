@@ -14,13 +14,13 @@ export class RecipeEditComponent implements OnInit {
   editMode = false;
   recipeForm: FormGroup;
 
-  constructor(private route: ActivatedRoute,
-              private recipeService: RecipeService,
-              private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute,
+    private recipeService: RecipeService,
+    private router: Router) {
   }
 
   ngOnInit() {
-    this.route.params
+    this.activatedRoute.params
       .subscribe(
         (params: Params) => {
           this.id = +params['id'];
@@ -36,6 +36,9 @@ export class RecipeEditComponent implements OnInit {
     //   this.recipeForm.value['description'],
     //   this.recipeForm.value['imagePath'],
     //   this.recipeForm.value['ingredients']);
+
+    console.log("valor a insertar o actualizar");
+    console.log(this.recipeForm.value);
     if (this.editMode) {
       this.recipeService.updateRecipe(this.id, this.recipeForm.value);
     } else {
@@ -61,7 +64,7 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onCancel() {
-    this.router.navigate(['../'], {relativeTo: this.route});
+    this.router.navigate(['../'], { relativeTo: this.activatedRoute });
   }
 
   private initForm() {
@@ -75,6 +78,9 @@ export class RecipeEditComponent implements OnInit {
       recipeName = recipe.name;
       recipeImagePath = recipe.imagePath;
       recipeDescription = recipe.description;
+      console.log("Tiene ingredientes");
+      console.log(recipe['ingredients']);
+      
       if (recipe['ingredients']) {
         for (let ingredient of recipe.ingredients) {
           recipeIngredients.push(
