@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
    */
   canActivate(
     route: ActivatedRouteSnapshot,
-    routerStetshot: RouterStateSnapshot
+    routerStateshot: RouterStateSnapshot
   ):
     | boolean
     | UrlTree
