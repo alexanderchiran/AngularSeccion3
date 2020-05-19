@@ -16,6 +16,7 @@ export class DataStorageService {
     private authService: AuthService) { }
 
   storeRecipes() {
+    console.log("Almacena en fierebase");
     const recipes = this.recipeService.getRecipes();
     this.http
       .put(

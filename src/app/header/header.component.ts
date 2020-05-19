@@ -43,6 +43,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
      * Guarda en firebase
      */
     onSaveData() {
+        console.log("entra a onSaveData")
         this.dataStorageService.storeRecipes();
     }
 

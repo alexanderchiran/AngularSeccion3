@@ -13,7 +13,7 @@
         <li routerLinkActive="Active" *ngIf="!isAuthenticated" >         
           <a class="nav-link" routerLink="/auth" >Authenticate</a>     
         </li>
-        <li routerLinkActive="Active">         
+        <li routerLinkActive="Active" *ngIf="isAuthenticated">         
           <a class="nav-link" routerLink="/shopping-list" >Shopping List</a>         
         </li>
         <li routerLinkActive="Active" *ngIf="isAuthenticated">         
