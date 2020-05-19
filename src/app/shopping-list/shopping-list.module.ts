@@ -7,6 +7,7 @@ import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
 import { SharedModule } from '../shared/shared.module';
 import { AuthGuard } from '../auth/auth.guard';
 import { CommonModule } from '@angular/common';
+import { LoggingService } from '../logging.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,9 @@ import { CommonModule } from '@angular/common';
       { path: '', component: ShoppingListComponent,  canActivate: [AuthGuard], },
     ]),
     SharedModule
+  ],
+  providers:[
+    LoggingService
   ]
 })
 export class ShoppingListModule { }
