@@ -36,7 +36,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 One quick note: In case you're hitting an error in the next lecture, make sure you have FormsModule added to your imports[] in the AppModule
 
-##Provider 
+## Provider 
 
 @Component({
   selector: 'app-recipes',
@@ -69,7 +69,7 @@ The clear() method automatically loops through all registered FormControls (or F
 
 It's like manually creating a loop and calling removeAt() for every item.
 
-##Compile for prduction mode
+## Compile for production mode
 > ng build --prod
 
 ## install Firebase tools
