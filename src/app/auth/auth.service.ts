@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError, BehaviorSubject, Subject } from 'rxjs';
+import {environment} from '../../environments/environment';
 
 import { User } from './user.model';
 
@@ -22,8 +23,8 @@ export class AuthService {
   //user = new Subject<User>();
   private tokenExpirationTimer: any;
   
-  signUpApiRestService='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=XXXXX'
-  loginApiRestService='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=XXXXXX'
+  signUpApiRestService='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key='+environment.firebaseAPIKey;
+  loginApiRestService='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key='+environment.firebaseAPIKey;
 
   constructor(private http: HttpClient, private router: Router) {}
 

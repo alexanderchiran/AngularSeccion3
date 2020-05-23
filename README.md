@@ -69,5 +69,24 @@ The clear() method automatically loops through all registered FormControls (or F
 
 It's like manually creating a loop and calling removeAt() for every item.
 
-##Compile 
-ng build --prod
+##Compile for prduction mode
+> ng build --prod
+
+## install Firebase tools
+
+npm install -g firebase-tools
+
+>firebase login
+
+>firebase init
+
+selecciona hosting
+selecciona la bd creada
+? What do you want to use as your public directory? dist/AngularSeccion3  
+? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+? File dist/AngularSeccion3/index.html already exists. Overwrite? No
+
+>firebase deploy
+
+https://angularrecipealex.web.app
+
