@@ -90,3 +90,5 @@ selecciona la bd creada
 
 https://angularrecipealex.web.app
 
+## Install NgRx
+$ npm install --save @ngrx/store
