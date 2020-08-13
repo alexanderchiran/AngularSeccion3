@@ -1,3 +1,6 @@
+Paulo Alexander Chiran portillo 
+Angular 9
+
 # Descargar Dependencias 
 path_project>npm install
 
